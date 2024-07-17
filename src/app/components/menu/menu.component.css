@@ -1,0 +1,40 @@
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  .small-image{
+    width: 140px;
+    margin-left: 5px;
+  }
+  .butao{
+    margin-top: -100px;
+    margin-left: 150px;
+  }
+  .produtos{
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .salvar{
+    margin-left: 1477px;
+    margin-top: -47px;
+  }
+  .carrinho{
+    margin-left: 1378px;
+    margin-top: -48px;
+  }
+  .like{
+    margin-left: 1260px;
+    margin-top: -46px;
+  }
+  .pesquisa{
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  .user{
+    margin-left: 1320px;
+    margin-top:-140px;
+  }

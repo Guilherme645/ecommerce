@@ -1,0 +1,30 @@
+/* styles.css */
+
+/* Estilo para o p-toolbar */
+.p-toolbar {
+    padding: 1rem;
+    color: white;
+}
+
+/* Estilo para o ícone dentro dos botões */
+.p-link i {
+    font-size: 1.5rem; /* Ajuste o tamanho do ícone conforme necessário */
+}
+
+/* Estilo para os botões no centro */
+.p-toolbar .flex-wrap .p-link {
+    background-color: transparent; /* Botões com fundo transparente */
+    border: none; /* Sem borda nos botões */
+    outline: none; /* Sem contorno ao foco */
+}
+
+/* Estilo para o avatar e nome no canto direito */
+.p-toolbar .flex .p-avatar {
+    width: 40px; /* Largura fixa para o avatar */
+    height: 40px; /* Altura fixa para o avatar */
+    border-radius: 50%; /* Borda de círculo para o avatar */
+}
+.small-image{
+    width: 140px;
+    margin-left: 25px;
+  }
