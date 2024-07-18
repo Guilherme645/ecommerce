@@ -4,5 +4,5 @@ nome:string;
 descricao:string;
 preco:number;
 img: string;
-
+resumo?: string; 
 }

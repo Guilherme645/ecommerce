@@ -4,7 +4,7 @@
     <h2>{{ product.nome }}</h2>
     <p>{{ product.descricao }}</p>
     <p>Preço: {{ product.preco | currency }}</p>
-    <button pButton type="button" label="Comprar" class="p-button-raised"></button>  
+    <button pButton type="button" label="Comprar" class="p-button-raised" (click)="viewProductDetails(product.id)"></button>
     <div class="like">
       <p-button icon="pi pi-bookmark" class="p-button-raised" severity="secondary " />
     </div>
@@ -17,7 +17,7 @@
     <h2>{{ product.nome }}</h2>
     <p>{{ product.descricao }}</p>
     <p>Preço: {{ product.preco | currency }}</p>
-    <button pButton type="button" label="Comprar" class="p-button-raised"></button> 
+    <button pButton type="button" label="Comprar" class="p-button-raised" (click)="viewProductDetails(product.id)"></button>
     <div class="like">
       <p-button icon="pi pi-bookmark" class="p-button-raised" severity="secondary " />
     </div> 
@@ -29,8 +29,11 @@
     <img [src]="product.img" alt="{{ product.nome }}">
     <h2>{{ product.nome }}</h2>
     <p>{{ product.descricao }}</p>
-    <p>Preço: {{ product.preco | currency }}</p>
-    <button pButton type="button" label="Comprar" class="p-button-raised"></button> 
+    <p>Preço: {{ product.preco | currency:'BRL'}}</p>
+    <div class="resumo" *ngIf="product.resumo">
+      {{ product.resumo }}
+    </div>
+    <button pButton type="button" label="Comprar" class="p-button-raised" (click)="viewProductDetails(product.id)"></button>
     <div class="like">
       <p-button icon="pi pi-bookmark" class="p-button-raised" severity="secondary " />
     </div>

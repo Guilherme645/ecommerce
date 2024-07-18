@@ -1,0 +1,81 @@
+/* src/app/pages/visuprod/visuprod.component.css */
+.product-detail {
+    max-width: 450px;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin-left: 78px;
+    margin-top: 20px;
+  }
+  
+  .product-detail h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .product-detail img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .product-detail p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  .product-detail p:last-of-type {
+    font-weight: bold;
+    color: #000;
+  }
+
+  .preco{
+    font-size: 50px;
+    margin-top: 50px;
+    margin-left:  620px;
+  }
+  .carrinho{
+    margin-left: 0px;
+  }
+  .button-detail{
+    max-width: 250px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+    margin-left: 600px;
+    margin-top: 15px;
+    display: flex;
+  gap: 10px; 
+  }
+  .menu{
+    margin-left: 78px;
+    padding-right: 55px;
+    margin-top: -50px;
+  }
+ 
+  .user{
+    margin-left: 1400px;
+    margin-top: 50px;
+  }
+  .butao{
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .descricao{
+    font-size: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin-right: 55px;
+    margin-left: 600px;
+    margin-top: -474px;
+  }

@@ -1,0 +1,33 @@
+
+<div class="butao">
+  <app-sidebar></app-sidebar>
+</div>
+<div class="menu"><app-menu></app-menu></div>
+<div *ngIf="produto" class="product-detail">
+   <img [src]="produto.img" alt="{{ produto.nome }}">
+</div> <div *ngIf="produto" class="descricao">
+      <h1>{{ produto.nome }}</h1>
+      <form [formGroup]="formGroup">
+        <p-rating formControlName="value" />
+    </form>
+    <br>
+<p>{{ produto.descricao }}</p>
+  </div>
+<div *ngIf="produto" class="preco">
+ 
+    <p> {{ produto.preco | currency:'BRL' }}</p>
+  </div>
+<div class="button-detail">
+  <div class="salvar">
+    <p-button icon="pi pi-heart" class="p-button-raised" severity="secondary " />
+  </div>
+  <div class="comprar">
+  <button pButton type="button" label="Comprar" class="p-button-raised"></button>
+</div>
+<div class="carrinho">
+  <p-button icon="pi pi-cart-minus"  class="p-button-raised" severity="secondary " />
+</div>
+
+</div>
+ 
+

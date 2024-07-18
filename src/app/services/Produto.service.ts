@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Produto } from '../produto';
+import { ConfirmationService } from 'primeng/api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutoService {
 
-constructor() { }
+constructor(private confirmationService: ConfirmationService) { }
 
 getProduto(): Produto[]{
   return[
-    { id: 1, nome: 'Produto 1', descricao: 'Descrição do Produto 1', preco: 100, img:"./assets/Notebook-Gamer-Msi-Multi-15-13-Gera-o-Intel-I9-13900h-Rtx-4070-Tela-15Polegadas-QHD-SSD-4TB-Nvme-RAM-64GB_1697043498_gg-removebg-preview.png" },
-      { id: 2, nome: 'Produto 2', descricao: 'Descrição do Produto 2', preco: 200, img:"./assets/Notebook-Gamer-Msi-Multi-15-13-Gera-o-Intel-I9-13900h-Rtx-4070-Tela-15Polegadas-QHD-SSD-4TB-Nvme-RAM-64GB_1697043498_gg-removebg-preview.png" },
-      { id: 3, nome: 'Produto 3', descricao: 'Descrição do Produto 3', preco: 300, img:"./assets/s541a3acfc95e4d1790a60abf4bcfa7d5j-ee01cc61c9a95af03116561877956628-1024-1024-removebg-preview.png" },
+    { id: 1, nome: 'Lenovo Notebook ThinkPad T16 Gen 2', descricao: 'Lenovo Notebook ThinkPad T16 Gen 2 21HH001MUS 16 Touchscreen - WUXGA - 1920 x 1200 - Intel Core i7 13ª geração i7-1355U Deca-core [10 Core] 1,70 GHz - 16 GB RAM total - 16 GB de memória integrada - 512 GB', preco: 100, img:"./assets/Notebook-Gamer-Msi-Multi-15-13-Gera-o-Intel-I9-13900h-Rtx-4070-Tela-15Polegadas-QHD-SSD-4TB-Nvme-RAM-64GB_1697043498_gg-removebg-preview.png" },
+    { id: 2, nome: 'Lenovo Notebook ThinkPad T16 Gen 2', descricao: 'Lenovo Notebook ThinkPad T16 Gen 2 21HH001MUS 16 Touchscreen - WUXGA - 1920 x 1200 - Intel Core i7 13ª geração i7-1355U Deca-core [10 Core] 1,70 GHz - 16 GB RAM total - 16 GB de memória integrada - 512 GB', preco: 100, img:"./assets/Notebook-Gamer-Msi-Multi-15-13-Gera-o-Intel-I9-13900h-Rtx-4070-Tela-15Polegadas-QHD-SSD-4TB-Nvme-RAM-64GB_1697043498_gg-removebg-preview.png" },
+    { id: 3, nome: 'Lenovo Notebook ThinkPad T16 Gen 2', descricao: 'Lenovo Notebook ThinkPad T16 Gen 2 21HH001MUS 16 Touchscreen - WUXGA - 1920 x 1200 - Intel Core i7 13ª geração i7-1355U Deca-core [10 Core] 1,70 GHz - 16 GB RAM total - 16 GB de memória integrada - 512 GB', preco: 100, img:"./assets/Notebook-Gamer-Msi-Multi-15-13-Gera-o-Intel-I9-13900h-Rtx-4070-Tela-15Polegadas-QHD-SSD-4TB-Nvme-RAM-64GB_1697043498_gg-removebg-preview.png" },
   ]
+}
+getProdutoById(id: number): Produto | undefined {
+  return this.getProduto().find(produto => produto.id === id);
 }
 
 }

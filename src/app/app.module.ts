@@ -20,7 +20,15 @@ import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ProdutoService } from './services/Produto.service';
 import { MenuComponent } from './components/menu/menu.component';
 import { BarraDePesquisaComponent } from './components/barraDePesquisa/barraDePesquisa.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VisuprodComponent } from './pages/visuprod/visuprod.component';
+import { RatingModule } from 'primeng/rating';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService } from 'primeng/api';
+import {MessageService} from 'primeng/api';
+import { ButtonLikeComponent } from './components/buttonLike/buttonLike.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +38,10 @@ import { FormsModule } from '@angular/forms';
     IndexComponent,
     ProdutosComponent,
     MenuComponent,
-    BarraDePesquisaComponent
+    BarraDePesquisaComponent,
+    VisuprodComponent,
+    ButtonLikeComponent
+    
   
   ],
   imports: [
@@ -44,11 +55,18 @@ import { FormsModule } from '@angular/forms';
     ToolbarModule,
     AppRoutingModule,
     MegaMenuModule,
-    FormsModule
+    FormsModule,
+    RatingModule,
+    ReactiveFormsModule,
+    ConfirmDialogModule,
+    ToastModule
+    
+    
+    
   
   
   ],
-  providers: [ProdutoService],
+  providers: [ProdutoService, ConfirmationService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

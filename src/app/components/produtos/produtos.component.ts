@@ -1,6 +1,7 @@
 import { ProdutoService } from './../../services/Produto.service';
 import { Produto } from './../../produto';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-produtos',
@@ -11,12 +12,14 @@ export class ProdutosComponent implements OnInit {
 
 Produto: Produto[] =[];
 
-  constructor(
-    private ProdutoService: ProdutoService
-  ) { }
+constructor(private produtoService: ProdutoService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.Produto= this.ProdutoService.getProduto();
-  }
+ngOnInit(): void {
+  this.Produto = this.produtoService.getProduto();
+}
+
+viewProductDetails(id: number): void {
+  this.router.navigate(['/visuprod', id]);
+}
 
 }

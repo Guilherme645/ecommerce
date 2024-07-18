@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ToolbarModule } from 'primeng/toolbar';
 import { AvatarModule } from 'primeng/avatar';
@@ -10,9 +11,12 @@ import { AvatarModule } from 'primeng/avatar';
 export class SidebarComponent implements OnInit {
   sidebarVisible: boolean = false;
 
-  constructor() { }
+  constructor(private Router: Router) { }
 
   ngOnInit() {
   }
+index(){
+  this.Router.navigate(['/index']);
+}
 
 }
