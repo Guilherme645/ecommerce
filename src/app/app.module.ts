@@ -28,6 +28,16 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmationService } from 'primeng/api';
 import {MessageService} from 'primeng/api';
 import { ButtonLikeComponent } from './components/buttonLike/buttonLike.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TableModule } from 'primeng/table';
+import { TagModule } from 'primeng/tag';
+import { CommonModule } from '@angular/common';
+import { TabelaComponent } from './components/tabela/tabela.component';
+import { ConfigurarProdutoComponent } from './pages/configurarProduto/configurarProduto.component';
+import { FileUploadModule } from 'primeng/fileupload';
+import { DialogModule } from 'primeng/dialog';
+
+
 
 
 @NgModule({
@@ -40,7 +50,9 @@ import { ButtonLikeComponent } from './components/buttonLike/buttonLike.componen
     MenuComponent,
     BarraDePesquisaComponent,
     VisuprodComponent,
-    ButtonLikeComponent
+    ButtonLikeComponent,
+    TabelaComponent,
+    ConfigurarProdutoComponent
     
   
   ],
@@ -59,7 +71,13 @@ import { ButtonLikeComponent } from './components/buttonLike/buttonLike.componen
     RatingModule,
     ReactiveFormsModule,
     ConfirmDialogModule,
-    ToastModule
+    ToastModule,
+    HttpClientModule,
+    TableModule,
+    TagModule,
+    CommonModule,
+    DialogModule
+    
     
     
     

@@ -1,3 +1,4 @@
+import { ConfigurarProdutoComponent } from './../../pages/configurarProduto/configurarProduto.component';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ToolbarModule } from 'primeng/toolbar';
@@ -17,6 +18,9 @@ export class SidebarComponent implements OnInit {
   }
 index(){
   this.Router.navigate(['/index']);
+}
+ConfigurarProduto(){
+  this.Router.navigate(['/configurarProduto']);
 }
 
 }

@@ -1,0 +1,48 @@
+.card {
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .card .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card p-table {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .card th {
+    background-color: #f5f5f5;
+    text-align: left;
+    padding: 0.5rem;
+  }
+  
+  .card td {
+    padding: 0.5rem;
+  }
+  
+  .card img {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  .editar{
+    margin-left: 55px;
+    margin-top: -20px;
+  }
+  .deletar{
+    margin-left: 55px;
+    margin-top: -47px;
+  }
+  .criar{
+margin-left: 1090px;
+  }
+  .recarregar{
+    margin-left: 5px;
+      }

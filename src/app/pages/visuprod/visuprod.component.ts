@@ -1,9 +1,8 @@
-import { ProdutoService } from 'src/app/services/Produto.service';
-// src/app/pages/visuprod/visuprod.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Produto } from '../../produto';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
+import { ProdutoService } from 'src/app/services/Produto.service';
+import { Produto } from './../../produto';
 
 @Component({
   selector: 'app-visuprod',
@@ -12,18 +11,32 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class VisuprodComponent implements OnInit {
   produto: Produto | undefined;
-  formGroup!: FormGroup;
+  formGroup: FormGroup;
 
   constructor(
-    private route: ActivatedRoute,
-    private ProdutoService: ProdutoService
-  ) {}
+    private produtoService: ProdutoService,
+    private route: ActivatedRoute
+  ) {
+    this.formGroup = new FormGroup({
+      value: new FormControl(4) // Inicializa o FormGroup com um controle
+    });
+  }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.produto = this.ProdutoService.getProdutoById(id);
-    this.formGroup = new FormGroup({
-      value: new FormControl(4)
-  });
+    if (isNaN(id)) {
+      console.error('ID inválido');
+      return;
+    }
+
+    this.produtoService.getProdutoById(id).subscribe(
+      (data: Produto) => {
+        console.log('Produto recebido:', data);
+        this.produto = data;
+      },
+      error => {
+        console.error('Erro ao buscar o produto', error);
+      }
+    );
   }
 }

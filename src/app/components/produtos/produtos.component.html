@@ -1,45 +1,19 @@
 <div class="product-list">
-  <div *ngFor="let product of Produto" class="product-card">
+  <div *ngFor="let product of produtos" class="product-card">
     <img [src]="product.img" alt="{{ product.nome }}">
     <h2>{{ product.nome }}</h2>
     <p>{{ product.descricao }}</p>
-    <p>Preço: {{ product.preco | currency }}</p>
-    <button pButton type="button" label="Comprar" class="p-button-raised" (click)="viewProductDetails(product.id)"></button>
-    <div class="like">
-      <p-button icon="pi pi-bookmark" class="p-button-raised" severity="secondary " />
-    </div>
-    <div class="salvar">
-      <p-button icon="pi pi-heart" class="p-button-raised" severity="secondary " />
-    </div>
-  </div>
-  <div *ngFor="let product of Produto" class="product-card">
-    <img [src]="product.img" alt="{{ product.nome }}">
-    <h2>{{ product.nome }}</h2>
-    <p>{{ product.descricao }}</p>
-    <p>Preço: {{ product.preco | currency }}</p>
-    <button pButton type="button" label="Comprar" class="p-button-raised" (click)="viewProductDetails(product.id)"></button>
-    <div class="like">
-      <p-button icon="pi pi-bookmark" class="p-button-raised" severity="secondary " />
-    </div> 
-    <div class="salvar">
-      <p-button icon="pi pi-heart" class="p-button-raised" severity="secondary " />
-    </div>
-  </div>
-  <div *ngFor="let product of Produto" class="product-card">
-    <img [src]="product.img" alt="{{ product.nome }}">
-    <h2>{{ product.nome }}</h2>
-    <p>{{ product.descricao }}</p>
-    <p>Preço: {{ product.preco | currency:'BRL'}}</p>
+    <p>Preço: {{ product.preco | currency:'BRL' }}</p>
     <div class="resumo" *ngIf="product.resumo">
       {{ product.resumo }}
     </div>
     <button pButton type="button" label="Comprar" class="p-button-raised" (click)="viewProductDetails(product.id)"></button>
     <div class="like">
-      <p-button icon="pi pi-bookmark" class="p-button-raised" severity="secondary " />
+      <p-button icon="pi pi-bookmark" class="p-button-raised" severity="secondary"></p-button>
     </div>
     <div class="salvar">
       <p-button icon="pi pi-heart" class="p-button-raised" severity="secondary " />
-    </div>
-
+ </div>
   </div>
 </div>
+
