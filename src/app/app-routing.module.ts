@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './pages/index/index.component';
 import { VisuprodComponent } from './pages/visuprod/visuprod.component';
 import { ConfigurarProdutoComponent } from './pages/configurarProduto/configurarProduto.component';
+import { PCarrinhoComponent } from './pages/pCarrinho/pCarrinho.component';
+import { PfavoritosComponent } from './pages/pfavoritos/pfavoritos.component';
 
   const routes: Routes = [
     { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -11,7 +13,11 @@ import { ConfigurarProdutoComponent } from './pages/configurarProduto/configurar
     
     { path: 'visuprod/:id', component: VisuprodComponent },
 
-    { path: 'configurarProduto', component: ConfigurarProdutoComponent }
+    { path: 'configurarProduto', component: ConfigurarProdutoComponent },
+
+    { path: 'pCarrinho', component: PCarrinhoComponent },
+
+    { path: 'pFavoritos', component: PfavoritosComponent }
   ];
   
   @NgModule({

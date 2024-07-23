@@ -36,6 +36,10 @@ import { TabelaComponent } from './components/tabela/tabela.component';
 import { ConfigurarProdutoComponent } from './pages/configurarProduto/configurarProduto.component';
 import { FileUploadModule } from 'primeng/fileupload';
 import { DialogModule } from 'primeng/dialog';
+import { CarrinhoComponent } from './components/carrinho/carrinho.component';
+import { PCarrinhoComponent } from './pages/pCarrinho/pCarrinho.component';
+import { FavoritosComponent } from './components/favoritos/favoritos.component';
+import { PfavoritosComponent } from './pages/pfavoritos/pfavoritos.component';
 
 
 
@@ -52,7 +56,13 @@ import { DialogModule } from 'primeng/dialog';
     VisuprodComponent,
     ButtonLikeComponent,
     TabelaComponent,
-    ConfigurarProdutoComponent
+    ConfigurarProdutoComponent,
+    CarrinhoComponent,
+    PCarrinhoComponent,
+    FavoritosComponent,
+    PfavoritosComponent
+    
+    
     
   
   ],
@@ -76,7 +86,8 @@ import { DialogModule } from 'primeng/dialog';
     TableModule,
     TagModule,
     CommonModule,
-    DialogModule
+    DialogModule,
+  
     
     
     

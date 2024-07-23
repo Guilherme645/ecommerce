@@ -21,15 +21,15 @@
 <div *ngIf="produto" class="preco">
   <p>{{ produto.preco | currency:'BRL' }}</p>
 </div>
-
 <div class="button-detail">
   <div class="salvar">
-    <p-button icon="pi pi-heart" class="p-button-raised" severity="secondary"></p-button>
+    <p-button icon="pi pi-heart" class="p-button-raised" severity="secondary" (click)="produto && addTolike(produto)"></p-button>
   </div>
   <div class="comprar">
     <button pButton type="button" label="Comprar" class="p-button-raised"></button>
   </div>
   <div class="carrinho">
-    <p-button icon="pi pi-cart-minus" class="p-button-raised" severity="secondary"></p-button>
+    <p-button icon="pi pi-bookmark" class="p-button-raised" severity="secondary" (click)="produto && addToCart(produto)"></p-button>
   </div>
 </div>
+

@@ -9,11 +9,11 @@
     </div>
     <button pButton type="button" label="Comprar" class="p-button-raised" (click)="viewProductDetails(product.id)"></button>
     <div class="like">
-      <p-button icon="pi pi-bookmark" class="p-button-raised" severity="secondary"></p-button>
+      <p-button icon="pi pi-bookmark" class="p-button-raised" severity="secondary" (click)="addToCart(product)"></p-button>
     </div>
     <div class="salvar">
-      <p-button icon="pi pi-heart" class="p-button-raised" severity="secondary " />
- </div>
+      <p-button icon="pi pi-heart" class="p-button-raised" severity="secondary" (click)="addTolike(product)"></p-button>
+    </div>
   </div>
 </div>
 

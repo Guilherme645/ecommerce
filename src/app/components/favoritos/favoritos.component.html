@@ -1,0 +1,64 @@
+<div class="card">
+  <p-table [value]="products" [tableStyle]="{'min-width': '60rem'}" selectionMode="single"
+      [(selection)]="selectedProducts">
+      <ng-template pTemplate="caption">
+          <div class="flex align-items-center justify-content-between">
+              <h1><strong>Favoritos</strong></h1>
+          </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Nome</th>
+              <th>Imagem</th>
+              <th>Preço</th>
+              <th>Descrição</th>
+              <th>Ações</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+          <tr>
+              <td>{{product.nome}}</td>
+              <td><img [src]="product.img || 'https://via.placeholder.com/100'" [alt]="product.nome" width="100" class="shadow-4" /></td>
+              <td>{{product.preco | currency:'USD'}}</td>
+              <td>{{product.descricao}}</td>
+              <td>
+                  <div class="deletar">
+                      <p-button icon="pi pi-trash" class="p-button-rounded p-button-danger"
+                          (click)="deleteProduct(product)"></p-button>
+                  </div>
+              </td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+          <div class="flex align-items-center justify-content-between">
+              Há um total de {{products ? products.length : 0}} produtos.
+          </div>
+      </ng-template>
+  </p-table>
+
+  <p-dialog header="Product Details" [(visible)]="productDialog" [modal]="true" [style]="{width: '50vw'}"
+      [closable]="false">
+      <div class="p-fluid">
+          <div class="p-field">
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" pInputText [(ngModel)]="product.nome" required autofocus>
+          </div>
+          <div class="p-field">
+              <label for="descricao">Descrição</label>
+              <textarea id="descricao" pInputTextarea [(ngModel)]="product.descricao" required></textarea>
+          </div>
+          <div class="p-field">
+              <label for="preco">Preço</label>
+              <input id="preco" type="number" pInputText [(ngModel)]="product.preco" required>
+          </div>
+
+      </div>
+      <div class="p-dialog-footer">
+          <p-button label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></p-button>
+      </div>
+  </p-dialog>
+  <div class="comprar">
+      <button pButton type="button" label="Comprar" class="p-button-raised"></button>
+  </div>
+</div>
+

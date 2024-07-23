@@ -22,5 +22,11 @@ index(){
 ConfigurarProduto(){
   this.Router.navigate(['/configurarProduto']);
 }
+carrinho(){
+  this.Router.navigate(['/pCarrinho']);
+}
+favoritos(){
+  this.Router.navigate(['/pFavoritos']);
+}
 
 }

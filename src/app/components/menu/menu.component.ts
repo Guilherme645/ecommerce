@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MegaMenuItem } from 'primeng/api';
 
@@ -8,7 +9,7 @@ import { MegaMenuItem } from 'primeng/api';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private Router: Router) { }
 
   items: MegaMenuItem[] | undefined;
   
@@ -48,4 +49,10 @@ export class MenuComponent implements OnInit {
        
     ]
 }
+carrinho(){
+    this.Router.navigate(['/pCarrinho']);
+  }
+  favoritos(){
+    this.Router.navigate(['/pFavoritos']);
+  }
 }
