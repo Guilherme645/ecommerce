@@ -1,4 +1,8 @@
-
+.menu{
+    margin-left: 78px;
+    padding-right: 55px;
+    margin-top: 15px;
+  }
  
   .user{
     margin-left: 1400px;
@@ -8,11 +12,7 @@
     margin-top: 20px;
     margin-left: 20px;
   }
-  .carrinho{
-    margin-left: 78px;
-    padding-right: 55px;
-  }
-  .menu{
+  .pagamento{
     margin-left: 78px;
     padding-right: 55px;
     margin-top: 15px;

@@ -1,0 +1,27 @@
+<p-card header="Personal Information">
+  <form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
+    <div class="flex flex-column gap-2">
+      <label for="username">Nome</label><br>
+      <input 
+          pInputText 
+          id="username" 
+          aria-describedby="username-help" 
+          [(ngModel)]="value" /> <br>
+      <small id="username-help">
+          Inclua o seu primeiro nome
+      </small>
+  </div>
+  <br>
+  <div class="flex flex-column gap-2">
+    <label for="username">Sobrenome</label> <br>
+    <input 
+        pInputText 
+        id="username" 
+        aria-describedby="username-help" 
+        [(ngModel)]="value" /><br>
+    <small id="username-help">
+Inclua o seu sobrenome    </small>
+</div>
+ 
+  </form>
+</p-card>

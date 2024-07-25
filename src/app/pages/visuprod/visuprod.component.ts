@@ -1,6 +1,6 @@
 import { LikeService } from './../../services/like.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { ProdutoService } from 'src/app/services/Produto.service';
 import { Produto } from './../../produto';
@@ -24,6 +24,7 @@ export class VisuprodComponent implements OnInit {
     private confirmationService: ConfirmationService, private messageService: MessageService,
     private LikeService: LikeService,
     private cartService: CartService,
+    private Router:Router 
   ) {
     this.formGroup = this.fb.group({
       value: [0] // Initialize with default value
@@ -55,5 +56,8 @@ export class VisuprodComponent implements OnInit {
   addTolike(produto: Produto): void {
     this.LikeService.addToLike(produto);
     this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Added to Cart', life: 3000 });
+  }
+  pagamento(){
+    this.Router.navigate(['/pagamento']);
   }
 }

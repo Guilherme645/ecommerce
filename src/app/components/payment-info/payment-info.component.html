@@ -1,0 +1,28 @@
+<!-- src/app/payment/payment-info/payment-info.component.html -->
+<p-card header="Informações de pagamento">
+  <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+    <div class="card flex justify-content-center">
+      <label for="ssn_input">Numero do cartão</label><br>
+      <p-inputMask mask="9999-9999-9999-9999" [(ngModel)]="value" id="ssn_input" />
+
+    </div>
+    <br>
+    <div class="p-field">
+      <label for="expirationDate">Data de validade</label>
+      <br>
+      <p-calendar id="expirationDate" formControlName="expirationDate" [showTime]="false"></p-calendar>
+    </div>
+    <br>
+    <div class="p-field">
+      <label for="cvv">CVV</label>
+      <br>
+      <p-inputMask id="cvv" mask="999" formControlName="cvv"></p-inputMask>
+    </div>
+
+    <div class="p-field">
+     <div class="enviar">
+      <p-button label="enviar" type="submit"></p-button>
+     </div> 
+    </div>
+  </form>
+</p-card>

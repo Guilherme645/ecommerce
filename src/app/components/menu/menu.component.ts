@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
     this.items = [
        
         {
-            label: 'Electronicos',
+            label: 'Eletronicos',
             icon: 'pi pi-mobile',
             items: [
                 [
@@ -54,5 +54,8 @@ carrinho(){
   }
   favoritos(){
     this.Router.navigate(['/pFavoritos']);
+  }
+  usuario(){
+    this.Router.navigate(['/usuario']);
   }
 }

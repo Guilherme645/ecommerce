@@ -28,5 +28,8 @@ carrinho(){
 favoritos(){
   this.Router.navigate(['/pFavoritos']);
 }
+login(){
+  this.Router.navigate(['/login']);
+}
 
 }
