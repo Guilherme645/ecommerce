@@ -31,5 +31,11 @@ favoritos(){
 login(){
   this.Router.navigate(['/login']);
 }
+sair(){
+  this.Router.navigate(['/entrada']);
+}
+report(){
+  this.Router.navigate(['/report']);
+}
 
 }

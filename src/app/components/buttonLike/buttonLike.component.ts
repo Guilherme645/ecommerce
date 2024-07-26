@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { LikeService } from './../../services/like.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { ConfirmPopup } from 'primeng/confirmpopup';
+import { Produto } from 'src/app/produto';
 
 @Component({
   selector: 'app-buttonLike',
@@ -7,34 +10,29 @@ import { ConfirmationService, MessageService } from 'primeng/api';
   styleUrls: ['./buttonLike.component.css']
 })
 export class ButtonLikeComponent  {
-  productId: number | null = null;
+  @ViewChild(ConfirmPopup) confirmPopup!: ConfirmPopup;
+    product: Produto | null = null;
 
-  constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {}
+    constructor(
+        private confirmationService: ConfirmationService, 
+        private messageService: MessageService,
+        private likeService: LikeService
+    ) {}
 
-  setProductId(id: number) {
-    this.productId = id;
-  }
-
-  confirm() {
-    if (this.productId === null) {
-      this.messageService.add({ severity: 'warn', summary: 'No Product Selected', detail: 'Please select a product first.', life: 3000 });
-      return;
+    showConfirmPopup(product: Produto) {
+        this.product = product;
+        this.confirmationService.confirm({
+            target: event?.target as EventTarget,
+            message: 'Deseja adicionar este produto aos favoritos?',
+            accept: () => {
+                if (this.product) { // Verifica se `product` não é `null`
+                    this.likeService.addToLike(this.product);
+                    this.messageService.add({ severity: 'info', summary: 'Confirmado', detail: 'Produto adicionado aos favoritos', life: 3000 });
+                }
+            },
+            reject: () => {
+                this.messageService.add({ severity: 'error', summary: 'Rejeitado', detail: 'Produto não adicionado aos favoritos', life: 3000 });
+            }
+        });
     }
-
-    this.confirmationService.confirm({
-      header: 'Confirmation',
-      message: `Are you sure you want to proceed with the action for product ID ${this.productId}?`,
-      acceptIcon: 'pi pi-check mr-2',
-      rejectIcon: 'pi pi-times mr-2',
-      rejectButtonStyleClass: 'p-button-sm',
-      acceptButtonStyleClass: 'p-button-outlined p-button-sm',
-      accept: () => {
-        this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: `Action confirmed for product ID ${this.productId}`, life: 3000 });
-        // Perform the action related to the product here, if needed
-      },
-      reject: () => {
-        this.messageService.add({ severity: 'error', summary: 'Rejected', detail: 'Action rejected', life: 3000 });
-      }
-    });
-  }
 }

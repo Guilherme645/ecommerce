@@ -1,0 +1,13 @@
+<div class="card">
+  <p-card title="Relatórios de Vendas" class="p-mb-4">
+    <p-chart type="bar" [data]="salesData" [options]="chartOptions"></p-chart>
+  </p-card>
+
+  <p-card title="Produtos Mais Vendidos" class="p-mb-4">
+    <p-chart type="pie" [data]="topProductsData" [options]="chartOptions"></p-chart>
+  </p-card>
+
+  <p-card title="Produtos Menos Vendidos" class="p-mb-4">
+    <p-chart type="pie" [data]="bottomProductsData" [options]="chartOptions"></p-chart>
+  </p-card>
+</div>

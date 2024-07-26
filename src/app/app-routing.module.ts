@@ -10,9 +10,13 @@ import { PConcluidoComponent } from './pages/pConcluido/pConcluido.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PagEntradaComponent } from './pages/pagEntrada/pagEntrada.component';
+import { EntradaESaidaComponent } from './pages/entradaESaida/entradaESaida.component';
 
   const routes: Routes = [
-    { path: '', redirectTo: '/index', pathMatch: 'full' },
+    { path: '', redirectTo: '/entrada', pathMatch: 'full' },
+
+    { path: 'entrada', component: PagEntradaComponent },
 
     { path: 'index', component: IndexComponent },
     
@@ -30,7 +34,9 @@ import { LoginComponent } from './pages/login/login.component';
 
     { path: 'usuario', component: PerfilComponent },
 
-    { path: 'login', component: LoginComponent }
+    { path: 'login', component: LoginComponent },
+
+    { path: 'report', component: EntradaESaidaComponent }
 
 
   ];

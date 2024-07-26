@@ -40,6 +40,8 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="summary">
+            <h3><strong>Registros de entrada e saida</strong></h3>
+            <p-button (onClick)="report()" icon="pi  pi-cog" severity="out"></p-button><br> <br>
             <div class="flex align-items-center justify-content-between">
                 Há um total de {{products ? products.length : 0}} produtos.
             </div>

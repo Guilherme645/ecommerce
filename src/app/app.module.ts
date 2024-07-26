@@ -63,6 +63,11 @@ import { LoginComponent } from './pages/login/login.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { PagEntradaComponent } from './pages/pagEntrada/pagEntrada.component';
+import { EntradaComponent } from './components/entrada/entrada.component';
+import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ReportComponent } from './components/report/report.component';
+import { EntradaESaidaComponent } from './pages/entradaESaida/entradaESaida.component';
 
 
 
@@ -105,7 +110,11 @@ const routes: Routes = [
     ConcluidoComponent,
     UsuarioComponent,
     PerfilComponent,
-    LoginComponent
+    LoginComponent,
+    PagEntradaComponent,
+    EntradaComponent,
+    ReportComponent,
+    EntradaESaidaComponent
   ],
   
   imports: [
@@ -140,7 +149,8 @@ const routes: Routes = [
     ChartModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ConfirmPopupModule
     
     
     

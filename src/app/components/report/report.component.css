@@ -1,0 +1,10 @@
+.p-card {
+    width: 400px; /* Ajuste o valor conforme necessário */
+    height: 300px; /* Ajuste o valor conforme necessário */
+    margin: 10px; /* Espaçamento entre os gráficos */
+  }
+  
+  .p-chart {
+    width: 100% !important;
+    height: 100% !important;
+  }

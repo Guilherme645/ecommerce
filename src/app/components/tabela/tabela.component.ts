@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 // tabela.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from 'src/app/services/Produto.service';
@@ -19,7 +20,7 @@ export class TabelaComponent implements OnInit {
   isNewProduct: boolean = false;
   file: File | null = null;
 
-  constructor(private produtoService: ProdutoService, private messageService: MessageService) {}
+  constructor(private produtoService: ProdutoService, private messageService: MessageService, private Router: Router) {}
 
   ngOnInit(): void {
     this.loadProducts();
@@ -95,6 +96,10 @@ export class TabelaComponent implements OnInit {
     if (file) {
       this.file = file;
     }
+  }
+
+  report(){
+    this.Router.navigate(['/report']);
   }
 
   uploadImage(produtoId: number): void {

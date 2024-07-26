@@ -6,23 +6,22 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class LikeService {
-private likeProducts: Produto[] = [];
-private likeSubject = new BehaviorSubject<Produto[]>(this.likeProducts);
+  private likeProducts: Produto[] = [];
+  private likeSubject = new BehaviorSubject<Produto[]>(this.likeProducts);
 
-like$ = this.likeSubject.asObservable();
+  like$ = this.likeSubject.asObservable();
 
-addToLike(product: Produto): void{
-  const isProductInLike = this.likeProducts.some(p => p.id === product.id);
-  if(!isProductInLike){
-    this.likeProducts.push(product);
-    this.likeSubject.next(this.likeProducts);
+  addToLike(product: Produto): void {
+    const isProductInLike = this.likeProducts.some(p => p.id === product.id);
+    if (!isProductInLike) {
+      this.likeProducts.push(product);
+      this.likeSubject.next(this.likeProducts);
+    }
   }
-}
 
-getLikeProducts(): Produto[] {
-  return[...this.likeProducts];
+  getLikeProducts(): Produto[] {
+    return [...this.likeProducts];
+  }
 
-}
-constructor() { }
-
+  constructor() { }
 }
